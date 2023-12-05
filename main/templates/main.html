@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K동 헬스장 </title>
+    <link rel="stylesheet" href="{% static 'css/mainpase.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <script src="{%static 'js/menu.js'%}"></script>
+    <script src="https://kit.fontawesome.com/756ca3c4d2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- 메뉴 창 -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__logo">
+            <i class="fa-solid fa-dumbbell"></i>
+            <a href="">Kdong GYM</a>
+        </div>
+        <ul class="navbar__menu">
+            <li><a href="">소개</a></li>
+            <li><a href="">공지</a></li>
+            <li><a href="">시설</a></li>
+            <li><a href="">커뮤니티</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+        {% if name %}
+        <div class="mypase_small">
+            <p class="userdata">{{ name }} 님</p>
+            <iframe class="mypase_iframe" src="{% url 'mypasesmall_view'%}" frameborder="0"></iframe>
+        </div>
+        {% else %}
+        <button class="login_button"><a href="/login/">login</a></button> {% endif%}
+    </nav>
+    <!-- 메뉴 창 -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- 첫 화면 -->
+    <!-- 첫 화면 -->
+</body>
+
+
+</html>

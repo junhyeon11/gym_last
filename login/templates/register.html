@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- 여기에 CSS 링크 또는 스타일을 추가하세요 -->
+</head>
+
+<body>
+
+    <div id="register-container">
+        <h2>Register</h2>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            {% if name_check %}
+            <p style="color: red; font-size: small;">{{ name_check }}</p>
+            {% endif %}
+            {{ form.id.label_tag }} {{ form.id }}
+            <br>
+            <!-- 이메일 입력 -->
+            {{ form.email.label_tag }} {{ form.email }}
+            <br>
+            <!-- 비밀번호 입력 -->
+            {{ form.password.label_tag }} {{ form.password }}
+            <br>
+            <!-- 비밀번호 확인 입력 -->
+            {{ form.passwordcheck.label_tag }} {{ form.passwordcheck }}
+            {% if error_check %}
+            <p style="color: red; font-size: small;">{{ error_check }}</p>
+            {% endif %}
+            <br>
+            <!-- 이름 -->
+            {{ form.name.label_tag }} {{ form.name }}
+            <br>
+
+            <!-- 회원가입 버튼 -->
+            <button type="submit">Register</button>
+        </form>
+
+        <!-- 로그인 링크 -->
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+
+</body>
+
+</html>
